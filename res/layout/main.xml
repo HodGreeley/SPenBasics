@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/drawBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/penBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="pen"
+			android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/eraseBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="erase"
+			android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/undoBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="undo"
+			android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/redoBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="redo"
+			android:layout_weight="1" />
+	</LinearLayout>
+
+	<LinearLayout
+    	android:id="@+id/rowDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+	    <Button
+            android:id="@+id/zoomOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="25sp"
+            android:layout_weight="1" />
+
+	    <Button
+            android:id="@+id/panDown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="▼"
+            android:textSize="25sp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/zoomIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="25sp"
+            android:layout_weight="1" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/rowMiddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rowDown">
+
+		<Button
+		    android:id="@+id/panLeft"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="◀"
+		    android:textSize="25sp"
+            android:layout_weight="1" />
+
+		<Button
+			android:id="@+id/panRight"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="▶"
+			android:textSize="25sp"
+			android:layout_weight="1" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/rowUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rowMiddle">
+
+		<TextView
+		    android:id="@+id/spacerLeft"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1" />
+
+		<Button
+		    android:id="@+id/panUp"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="▲"
+		    android:textSize="25sp"
+	    	android:layout_weight="1" />
+
+		<TextView
+		    android:id="@+id/spacerRight"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1" />
+	</LinearLayout>
+		
+    <FrameLayout
+        android:id="@+id/viewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/drawBtns"
+        android:layout_above="@id/rowUp">
+
+		<com.samsung.sdraw.CanvasView 
+			android:id="@+id/canvas_view"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/moon" />
+		
+		<com.samsung.sdraw.SettingView
+			android:id="@+id/setting_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+    </FrameLayout>
+</RelativeLayout>
